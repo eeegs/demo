@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ModelsEtc;assembly=ModelsEtc"
+             xmlns:local="clr-namespace:App"
+             x:DataType="viewModels:ViewModel"
+             x:Class="App.MainPage">
+
+    <FlexLayout BindableLayout.ItemsSource="{Binding Seats}"
+                Direction="Row"
+                BackgroundColor="AliceBlue">
+        <BindableLayout.ItemTemplate>
+            <DataTemplate>
+                <Grid x:DataType="viewModels:Seat"
+                      BackgroundColor="AntiqueWhite"
+                      HeightRequest="80"
+                      WidthRequest="80"
+                      Margin="20">
+                    <BoxView HeightRequest="80"
+                             WidthRequest="80"
+                             CornerRadius="15"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Color="IndianRed" />
+                    <local:PlayerControl IsVisible="{Binding IsOccupied}"
+                                         BindingContext="{Binding Player}" />
+                </Grid>
+            </DataTemplate>
+        </BindableLayout.ItemTemplate>
+    </FlexLayout>
+</ContentPage>
