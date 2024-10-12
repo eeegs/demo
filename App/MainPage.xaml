@@ -6,6 +6,7 @@
              x:DataType="viewModels:ViewModel"
              x:Class="App.MainPage">
 
+    <!--Aim here is to show the seats, but only the players when the seat is occupied-->
     <FlexLayout BindableLayout.ItemsSource="{Binding Seats}"
                 Direction="Row"
                 BackgroundColor="AliceBlue">
